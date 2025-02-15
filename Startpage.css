@@ -1,12 +1,49 @@
-body {background-color: antiquewhite;}
 
-h1 {
-    color: aliceblue;
-    display: flex;
-    position:relative;
-    text-align: center;
-
+body {
+    background-color: antiquewhite;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
-p {color: aliceblue;}  
 
+h1 {
+    color: rgb(46, 128, 199);
+    text-align: center;
+    font-size: 2em;
+    margin-top: 50px;
+}
+
+
+p {
+    color: black; 
+    font-size: 1.2em;
+}
+
+
+button {
+    background-color: white; 
+    border: 2px solid blue;
+    color: blue;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    margin: 10px auto; /* Center the buttons */
+    cursor: pointer;
+    border-radius: 5px;
+    width: 200px;
+}
+
+button:hover {
+    background-color: blue;
+    color: white;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
