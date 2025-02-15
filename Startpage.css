@@ -1,0 +1,12 @@
+body {background-color: antiquewhite;}
+
+h1 {
+    color: aliceblue;
+    display: flex;
+    position:relative;
+    text-align: center;
+
+}
+
+p {color: aliceblue;}  
+
