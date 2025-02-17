@@ -10,6 +10,11 @@ body {
     background-color: #B5C2B7;
     margin: 0;
     font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
 
@@ -20,52 +25,101 @@ h1 {
     margin-top: 50px;
 }
 
+.typewriter h1 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid #2D2327; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .17em; /* Adjust as needed */
+  align-items: center;
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+    
+}
 
-p {
-    color: #45364B; 
-    font-size: 1.2em;
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #2D2327; }
 }
 
 
+p {
+    visibility: hidden;
+    color: #45364B; 
+    font-size: 1.2em;
+    animation: fadeIn 5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { 
+        visibility: visible;
+        opacity: 1; 
+    }
+}
+
 button {
+    visibility: hidden ;
     background-color: white; 
     border: 2px solid #62466B;
     color: #8C93A8;
-    padding: 15px 32px;
+    padding: 2px 32px;
     text-align: center;
     text-decoration: none;
-    display: table-row;
+    display: inline-block;
     font-size: 16px;
-    margin: 10px auto; /* Center the buttons */
+    margin: 20px auto; 
     cursor: pointer;
-    border-radius: 16px;
+    border-radius: 30px;
     width: 123px;
-    animation-fill-mode: forwards;
+
+    transform: translateY(30px);
+    animation: popUp 0.5s ease-out forwards;
+        
+}
+@keyframes popUp{
+    0%{
+        opacity: 0;
+        transform: translateY(30px);
+        visibility: hidden;
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+    }
 }
 
-button:hover {
-    background-color: #62466B;
-    color: white;
+.AM {
+    animation-delay: 4.4s;
 }
-
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+.SP {
+    animation-delay: 5.2s;
+}
+.Link {
+    animation-delay: 6s;
 }
 
 </style>
 <body>
+<div class = "typewriter">
+    <h1>Hi, my name is Arshan Mukadam.</h1>
+</div>
 
-<h1>Hi, my name is Arshan Mukadam</h1>
 <p> What would you like to know?</p>
-
-<button>About Me.</button>
-<button class = "SP">Side Projects.</button>
-<button class="Link">Relevant Links.</button>
-
-
+<div class = "button">
+    <button class = AM>About Me.</button>
+    <button class = SP>Side Projects.</button>
+    <button class="Link">Relevant Links.</button>
+    
+</div>
 </body>
 </html>
